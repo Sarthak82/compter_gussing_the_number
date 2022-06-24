@@ -1,0 +1,23 @@
+import random
+
+def comp_guess(x):
+    low=1
+    high=x
+    count=0
+    numb=0
+    while numb!='c':
+        count+=1
+        if(high!=low):
+            random_number=random.randint(low,high)
+        else:
+            random_number=low
+            break
+        numb=input(f"The entered number {random_number} is high(H),low(L),correct(C)").lower()
+        if(numb=='h'):
+            high=random_number-1
+        elif(numb=='l'):
+            low=random_number+1
+    print(f"Correct answer {random_number} is the right answer")
+    print(f"Trial taken by computer are {count}")
+            
+comp_guess(10)
